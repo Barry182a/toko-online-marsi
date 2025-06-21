@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online Marsi</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+    <body>
+        
+    <div id="cart-panel" class="cart-slide-panel">
+        <div class="cart-panel-header">
+            <h2>Keranjang Anda</h2>
+            <button id="close-cart-btn" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items-list">
+            <p class="empty-cart-msg">Keranjang Anda masih kosong.</p>
+        </div>
+        <div class="cart-panel-footer">
+            <button id="checkout-btn" class="btn-pesan"><i class="fab fa-whatsapp"></i> Pesan Semua</button>
+        </div>
+    </div>
+    <div id="panel-overlay" class="overlay-background"></div>
+
+
+    <div class="mobile-container">
+        <header class="top-header">
+    <div class="search-bar" id="header-search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Cari Barang">
+    </div>
+    <div class="header-icons">
+        <a href="#" class="header-cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-item-count" class="cart-badge hidden">0</span>
+            <div id="cart-notification" class="cart-popup-notification">Barang ditambah!</div>
+        </a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</header>
+<div id="search-results-dropdown"></div>
+
+        <main class="content">
+            <div class="logo-container">
+                <div class="decorative-elements">
+    <img src="Jaket-removebg-preview.png" alt="dekorasi 1" class="deco-item" id="deco1">
+    <img src="Kaos-removebg-preview.png" alt="dekorasi 2" class="deco-item" id="deco2">
+    <img src="Lemari-removebg-preview.png" alt="dekorasi 3" class="deco-item" id="deco3">
+    <img src="Pakaian_Anak-removebg-preview.png" alt="dekorasi 4" class="deco-item" id="deco4">
+    <img src="Sandal-removebg-preview.png" alt="dekorasi 5" class="deco-item" id="deco5">
+    <img src="Sepatu-removebg-preview.png" alt="dekorasi 6" class="deco-item" id="deco6">
+    <img src="Teflon-removebg-preview.png" alt="dekorasi 7" class="deco-item" id="deco7">
+</div>
+        <img src="logo.png" alt="Logo Toko">
+    </div>
+    <section class="info-slider">
+    <div class="slider-wrapper">
+        <div class="slide">
+            <img src="https://placehold.co/600x300/EAE3D2/333333?text=Promo+Spesial!" alt="Promo Spesial">
+        </div>
+        <div class="slide">
+            <img src="https://placehold.co/600x300/D2DAEA/333333?text=Gratis+Ongkir" alt="Gratis Ongkir">
+        </div>
+        <div class="slide">
+            <img src="https://placehold.co/600x300/B4B4B4/333333?text=Produk+Baru" alt="Produk Baru">
+        </div>
+    </div>
+    <div class="slider-dots"></div>
+</section>
+     <section class="featured-section">
+        <h2>Produk Unggulan</h2>
+        <div class="product-carousel">
+            </div>
+    </section>
+    <section class="seasonal-section">
+        <h2>Produk Musiman: Kembali ke Sekolah!</h2>
+        <div class="product-grid">
+            </div>
+            <div class="product-grid">
+            </div> <div class="see-more-container">
+            <a href="#" class="see-more-btn">Klik Selengkapnya</a>
+        </div>
+    </section>
+    </main>
+        <footer class="bottom-nav">
+    <a href="index.html" class="nav-item active"> <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+    <a href="#kategori" class="nav-item" id="kategori-btn">
+        <i class="fas fa-list"></i>
+        <span>Kategori</span>
+    </a>
+    <a href="semua-produk.html" class="nav-item"> <i class="fas fa-box-open"></i>
+        <span>Semua Produk</span>
+    </a>
+    <a href="#informasi" class="nav-item" id="info-btn">
+    <i class="fas fa-info-circle"></i>
+    <span>Informasi</span>
+</a>
+</footer>
+    </div>
+    <div class="overlay-background" id="categoryOverlay"></div>
+<div class="panel-container" id="categoryPanel">
+    <div class="panel-content">
+        <div class="panel-header">
+            <h2>Pilih Kategori</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+       <div class="category-list">
+    <a href="kategori.html?nama=Pakaian" class="category-item">Pakaian</a>
+    <a href="kategori.html?nama=Perabot" class="category-item">Perabot</a>
+    <a href="kategori.html?nama=Kebutuhan Rumah" class="category-item">Kebutuhan Rumah</a>
+</div>
+    </div>
+</div>
+
+<div class="overlay-background" id="infoOverlay"></div>
+<div class="panel-container" id="infoPanel">
+    <div class="panel-content">
+        <div class="panel-header">
+            <h2>Informasi</h2>
+            <button class="close-btn">&times;</button>
+        </div>
+        <div class="info-page-content">
+             <h1 class="page-title">Tentang Toko Marsi</h1>
+             <p>Di sini Anda bisa menulis deskripsi lengkap mengenai toko, kebijakan privasi, syarat dan ketentuan, atau informasi lainnya nanti.</p>
+             <p>Konten ini bisa di-scroll jika lebih panjang dari layar.</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js?v=1.4" type="module"></script>
+</body>
+   
