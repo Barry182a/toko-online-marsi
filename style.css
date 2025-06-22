@@ -934,8 +934,35 @@ will-change: transform, opacity; /* Tambahkan properti ini */
 /* Kode yang sudah diperbaiki posisinya */
 .cart-panel-footer {
     padding: 16px;
-    display: flex;              /* Gunakan flexbox untuk perataan */
-    justify-content: flex-end;  /* Dorong semua item di dalamnya ke kanan */
+    display: flex;
+    justify-content: flex-end; /* Dorong semua item ke kanan */
+    align-items: center;
+    gap: 72px; /* Beri jarak antara harga dan tombol */
+}
+.cart-total strong {
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    font-weight: 700; /* Dibuat lebih tebal */
+}
+/* Aturan baru untuk mendorong total harga ke kanan */
+#cart-total-container {
+    margin-left: auto; /* Kunci utama: margin kiri otomatis */
+}
+
+/* Gaya baru untuk teks total harga */
+.cart-total {
+    font-weight: 600;
+}
+
+.cart-total span {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.cart-total strong {
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
 }
 
 .cart-panel-footer .btn-pesan {
@@ -995,4 +1022,206 @@ will-change: transform, opacity; /* Tambahkan properti ini */
 }
 .search-result-item span {
     font-weight: 500;
+}
+/* ----- Gaya untuk Kontrol Kuantitas di Keranjang ----- */
+
+/* Mengatur agar tombol kuantitas dan hapus sejajar */
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+}
+
+.quantity-control .item-quantity {
+    padding: 0 12px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.quantity-control .quantity-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    color: var(--color-text-primary);
+}
+
+.quantity-control .quantity-btn:hover {
+    color: var(--color-accent-primary);
+}
+/* ----- Gaya untuk Halaman Checkout ----- */
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit; /* Menggunakan font yang sama dengan body */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.2);
+}
+
+.form-group small {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-top: 6px;
+}
+
+#checkout-summary {
+    margin-top: 16px;
+}
+#checkout-form button {
+    /* Properti yang sudah ada */
+    width: 100%; /* Membuat tombol memenuhi lebar kontainer */
+    padding: 14px; /* Sesuaikan padding agar lebih besar */
+    border: none; /* Menghilangkan garis tepi */
+    outline: none; /* Menghilangkan garis fokus saat diklik */
+    background-color: var(--color-accent-primary);
+    margin-top: 16px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+}
+
+#checkout-form button:hover {
+    background-color: var(--color-accent-primary-darker);
+}
+
+/* GANTI DAN TAMBAHKAN ATURAN INI DI BAGIAN CHECKOUT */
+
+/* Mengatur setiap baris item di ringkasan */
+#checkout-items-list .cart-item {
+    display: flex;
+    justify-content: space-between; /* Mendorong harga ke kanan */
+    align-items: center;
+}
+
+/* Mengatur semua baris di dalam summary box */
+.summary-row {
+    display: flex;
+    justify-content: space-between; /* Mendorong elemen kedua ke kanan */
+    align-items: center; /* Membuatnya sejajar secara vertikal */
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+/* Aturan spesifik untuk baris Total agar lebih menonjol */
+.summary-row.total {
+    font-size: 1.1rem;
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid var(--color-border);
+}
+
+#checkout-items-list .cart-item-info h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+#checkout-items-list .cart-item-info .price {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+/* TAMBAHKAN ATURAN BARU INI DI BAGIAN CHECKOUT */
+
+#checkout-items-list .cart-item {
+    display: flex;
+    justify-content: space-between; /* Mendorong harga ke kanan */
+    align-items: center;
+}
+/* ----- Gaya untuk Pilihan Metode Pembayaran ----- */
+
+.payment-methods {
+    margin-top: 16px;
+}
+
+.payment-methods h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.payment-option:hover {
+    border-color: var(--color-accent-primary);
+    background-color: rgba(229, 57, 53, 0.05);
+}
+
+.payment-option.selected {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.2);
+    background-color: rgba(229, 57, 53, 0.05);
+}
+
+.payment-option img {
+    height: 30px;
+    width: auto;
+    margin-right: 8px;
+}
+
+.payment-option span {
+    font-weight: 600;
+}
+
+.payment-instructions {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: var(--color-surface-muted);
+    border-radius: 8px;
+    display: none; /* Sembunyi secara default */
+}
+
+.payment-instructions.active {
+    display: block; /* Tampilkan saat metode dipilih */
 }

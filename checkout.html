@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Toko Marsi</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link rel="stylesheet" href="style.css?v=1.5">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div id="search-panel" class="search-slide-panel"></div>
+    <div id="cart-panel" class="cart-slide-panel"></div>
+    <div id="panel-overlay" class="overlay-background"></div>
+    <div class="panel-container" id="categoryPanel"></div>
+    <div class="panel-container" id="infoPanel"></div>
+
+    <div class="mobile-container">
+        <header class="top-header">
+            <div class="search-bar" id="header-search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cari Barang">
+            </div>
+            <div class="header-icons">
+                <a href="keranjang.html" class="header-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-item-count" class="cart-badge hidden">0</span>
+                    <div id="cart-notification" class="cart-popup-notification"></div>
+                </a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="main-content-wrapper">
+                <h1 class="page-title">Data Pengiriman</h1>
+                
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-group">
+                        <label for="customer-name">Nama Lengkap</label>
+                        <input type="text" id="customer-name" name="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-phone">Nomor Telepon (WhatsApp)</label>
+                        <input type="tel" id="customer-phone" name="customer-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-address">Alamat Lengkap</label>
+                        <textarea id="customer-address" name="customer-address" rows="4" required></textarea>
+                        <small>Sertakan nama jalan, nomor rumah, RT/RW, kelurahan, kecamatan, kota, dan kode pos.</small>
+                    </div>
+
+                    <div id="checkout-summary" class="cart-summary">
+                        <h2>Ringkasan Belanja</h2>
+                        <div id="checkout-items-list"></div>
+                        <div class="summary-row total">
+                            <strong>Total</strong>
+                            <strong id="checkout-total-price">Rp0</strong>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h2>Pilih Metode Pembayaran</h2>
+                        <div class="payment-options">
+                            <div class="payment-options">
+                                <div class="payment-option" data-method="cod">
+        <img src="cod.png" alt="COD">
+        <span>COD (Bayar Ditempat)</span>
+    </div>
+    <div class="payment-option" data-method="shopeepay">
+        <img src="shopeepay.png" alt="Shopeepay">
+        <span>Transfer Shopeepay</span>
+    </div>
+     <div class="payment-option" data-method="gopay">
+        <img src="gopay.jpg" alt="Gopay">
+        <span>Transfer Gopay</span>
+    </div>
+    <div class="payment-option" data-method="qris">
+        <img src="qris.png" alt="QRIS">
+        <span>QRIS (Semua E-Wallet)</span>
+    </div>   
+    
+</div>
+                        <div id="payment-instructions" class="payment-instructions"></div>
+                    </div>
+                    
+                    <button type="submit" id="confirm-order-btn" class="btn-pesan full-width">
+                        <i class="fas fa-paper-plane"></i> Pesan Barang
+                    </button>
+                </form>
+
+            </div>
+        </main>
+
+        <footer class="bottom-nav">
+            <a href="index.html" class="nav-item"> <i class="fas fa-home"></i> <span>Home</span> </a>
+            <a href="#kategori" class="nav-item" id="kategori-btn"> <i class="fas fa-list"></i> <span>Kategori</span> </a>
+            <a href="semua-produk.html" class="nav-item"> <i class="fas fa-box-open"></i> <span>Semua Produk</span> </a>
+            <a href="#informasi" class="nav-item" id="info-btn"> <i class="fas fa-info-circle"></i> <span>Informasi</span> </a>
+        </footer>
+    </div>
+    
+    <script src="script.js?v=1.6" type="module"></script> 
+</body>
+</html>
