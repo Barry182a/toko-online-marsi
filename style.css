@@ -929,9 +929,8 @@ will-change: transform, opacity; /* Tambahkan properti ini */
     color: var(--color-text-secondary);
 }
 
-/* ===== KEMBALIKAN KE GAYA SEMULA tomol pesan panel keranjang ===== */
+/* ===== PENGATURAN FINAL FOOTER PANEL KERANJANG ===== */
 
-/* Kode yang sudah diperbaiki posisinya */
 .cart-panel-footer {
     padding: 16px;
     display: flex;
@@ -965,62 +964,186 @@ will-change: transform, opacity; /* Tambahkan properti ini */
     font-size: 1.2rem;
 }
 
+
+
+#cart-total-container span {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+#cart-total-container strong {
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Mengatur tombol "Pesan Semua" */
+/* Sesuaikan gaya tombol di footer panel keranjang */
 .cart-panel-footer .btn-pesan {
-    width: auto; /* Atur lebar tombol agar mengikuti kontennya */
-    padding: 14px 22px; /* Sesuaikan padding agar pas */
+    width: auto;
+    padding: 14px 22px;
     font-size: 1rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-}
-/* ----- Gaya untuk Hasil Pencarian Dropdown ----- */
-#search-results-dropdown {
-    display: none; /* Sembunyi secara default */
-    position: fixed;
-    top: 60px; /* Tepat di bawah header */
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 480px;
-    max-height: calc(100vh - 120px); /* Tinggi maksimal layar dikurangi header & footer */
-    background-color: var(--color-surface);
-    border-top: 1px solid var(--color-border);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    z-index: 1390; /* Tepat di bawah header */
-    overflow-y: auto;
-}
+    border: none;      /* Menghilangkan border standar */
+    outline: none;     /* Menghilangkan garis fokus hitam saat diklik */
+    border-radius: 8px; /* Menambahkan sudut melengkung */
 
-#search-results-dropdown.active {
-    display: block; /* Tampilkan saat aktif */
+    /* PERUBAHAN BARU: Menggunakan warna tema */
+    background-color: var(--theme-color-blue); /* Contoh menggunakan warna tema biru */
+    color: var(--color-text-primary); /* Menggunakan warna teks gelap agar terbaca */
 }
+/* ----- Gaya untuk Kontrol Kuantitas di Keranjang ----- */
 
-/* Kita bisa gunakan kembali gaya item hasil pencarian */
-.search-result-item {
+/* Mengatur agar tombol kuantitas dan hapus sejajar */
+.cart-item-actions {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 12px 16px;
-    text-decoration: none;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+}
+
+.quantity-control .item-quantity {
+    padding: 0 12px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.quantity-control .quantity-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 4px 12px;
     color: var(--color-text-primary);
-    border-bottom: 1px solid var(--color-border);
-    transition: background-color 0.2s;
 }
-.search-result-item:hover {
-    background-color: rgba(0,0,0,0.03);
+
+.quantity-control .quantity-btn:hover {
+    color: var(--color-accent-primary);
 }
-.search-result-item img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+/* ----- Gaya untuk Halaman Checkout ----- */
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/* Aturan baru untuk tombol di halaman checkout */
+#checkout-form .btn-pesan {
+    background-color: var(--theme-color-blue); /* Contoh menggunakan warna tema biru */
+    color: var(--color-text-primary); /* Warna teks gelap agar kontras */
+    gap: 0; /* Menghilangkan gap karena ikon sudah tidak ada */
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit; /* Menggunakan font yang sama dengan body */
 }
-.search-result-item span {
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.2);
+}
+/* ===== ATURAN BARU UNTUK MEWARNAI FORM CHECKOUT ===== */
+
+/* Memberi warna pada input field pertama (Nama) */
+.checkout-form .form-group:nth-of-type(1) input {
+    background-color: var(--theme-color-beige);
+}
+
+/* Memberi warna pada input field kedua (Telepon) */
+.checkout-form .form-group:nth-of-type(2) input {
+    background-color: var(--theme-color-pink);
+}
+
+/* Memberi warna pada area teks ketiga (Alamat) */
+.checkout-form .form-group:nth-of-type(3) textarea {
+    background-color: var(--theme-color-blue);
+}
+.form-group small {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-top: 6px;
+}
+
+#checkout-summary {
+    margin-top: 16px;
+}
+#checkout-form button {
+    /* Properti yang sudah ada */
+    width: 100%; /* Membuat tombol memenuhi lebar kontainer */
+    padding: 14px; /* Sesuaikan padding agar lebih besar */
+    border: none; /* Menghilangkan garis tepi */
+    outline: none; /* Menghilangkan garis fokus saat diklik */
+    background-color: var(--color-accent-primary);
+    margin-top: 16px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+}
+
+#checkout-form button:hover {
+    background-color: var(--color-accent-primary-darker);
+}
+
+/* GANTI DAN TAMBAHKAN ATURAN INI DI BAGIAN CHECKOUT */
+
+/* Mengatur setiap baris item di ringkasan */
+#checkout-items-list .cart-item {
+    display: flex;
+    justify-content: space-between; /* Mendorong harga ke kanan */
+    align-items: center;
+}
+
+/* Mengatur semua baris di dalam summary box */
+.summary-row {
+    display: flex;
+    justify-content: space-between; /* Mendorong elemen kedua ke kanan */
+    align-items: center; /* Membuatnya sejajar secara vertikal */
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+/* Aturan spesifik untuk baris Total agar lebih menonjol */
+.summary-row.total {
+    font-size: 1.1rem;
+    padding-top: 16px;
+    margin-top: 8px;
+    border-top: 1px solid var(--color-border);
+}
+
+#checkout-items-list .cart-item-info h4 {
+    font-size: 0.9rem;
     font-weight: 500;
 }
 /* ----- Gaya untuk Kontrol Kuantitas di Keranjang ----- */
@@ -1213,7 +1336,6 @@ will-change: transform, opacity; /* Tambahkan properti ini */
 .payment-option span {
     font-weight: 600;
 }
-
 .payment-instructions {
     margin-top: 16px;
     padding: 16px;
